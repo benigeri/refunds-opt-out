@@ -1,43 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Stanford Refunds-opt-out : Student Activities Fee Waiver Request Auto Opt Out" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Stanford Refunds-opt-out by benigeri</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Stanford Refunds-opt-out</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>Stanford Refunds-opt-out</h1>
+        <p>Student Activities Fee Waiver Request Auto Opt Out</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/benigeri/refunds-opt-out">View on GitHub</a>
+        <p class="view"><a href="https://github.com/benigeri/refunds-opt-out">View the Project on GitHub <small>benigeri/refunds-opt-out</small></a></p>
 
-          <h1 id="project_title">Stanford Refunds-opt-out</h1>
-          <h2 id="project_tagline">Student Activities Fee Waiver Request Auto Opt Out</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/benigeri/refunds-opt-out/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/benigeri/refunds-opt-out/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+        <ul>
+          <li><a href="https://github.com/benigeri/refunds-opt-out/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/benigeri/refunds-opt-out/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/benigeri/refunds-opt-out">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h1>Opt out of your Stanford student group fees in 2 simple steps!</h1>
 
 <p>If you're a student at Stanford, then by default you are billed almost 150$ every quarter to fund student groups. After digging in a little, I realized that Stanford gave over 100$ to groups that provided me no value whatsoever. Less than 40$ went to the groups that I was somehow interested in.  </p>
 
-<p>Over 12 quarters, this amounts to over $1600, and a lot of students aren't aware of this. And if you do want to opt out, you'll have to head to <a href="http://waivers.stanford.edu">http://waivers.stanford.edu</a> and manually toggle and slide clunky sliders for every single group. I personally think it would make a lot more sense for students to have to opt in rather than opt out. </p>
+<p>Over 12 quarters, this amounts to over $1600, and a lot of students aren't aware of this. And if you do want to opt out, you'll have to create a fee waiver request. Then for every single student group you have to slide clunky sliders and toggle checkboxes. Wouldn't it make a lot more sense for students to have to opt in rather than opt out?</p>
 
-<p>That's why I wrote a little script that will automatically opt out of each student fee, to turn this into as much of an opt in process as I could. All you have to do is create a new waiver request, and copy and paste some javascript into your browser's URL bar. </p>
+<p>That's why I wrote a little script that will automatically opt out of each student fee. After running it you'll be able to opt in and fund the groups that bring you value.  All you have to do is create a new waiver request, and copy and paste some javascript into your browser's URL bar. </p>
 
 <h1>Instructions</h1>
 
@@ -47,41 +44,39 @@
 
 <h3>2. Run the script!</h3>
 
-<p>First of all copy and paste the following <strong>script</strong>:</p>
+<p>Copy the following <strong>script</strong>:</p>
 
 <pre><code>$.each($('[name*="value"]'), function(index, elem) {
   $(elem).attr('checked', true);
 });
 $.each($('[id*="amount"]'), function(index, elem) {
-    elem.value = $(elem).parent().parent().children('th:nth-child(2)').text().substring(1);
+  elem.value = $(elem).parent().parent().children('th:nth-child(2)').text().substring(1);
 });
 </code></pre>
 
-<p>Then clear your browser's URL bar, and type</p>
+<p>Then go back to the fee waiver request and clear your browser's URL bar.</p>
+
+<p>Then type into the URL bar:</p>
 
 <pre><code>javascript:
 </code></pre>
 
 <p>As soon as you finish typing <code>javascript:</code> paste the script in the URL bar, and press <code>enter</code></p>
 
-<p>This will set all of the waivers to their maximum value and pick a reason for you. Don't worry if the sliders are still positioned to the left, it does not matter. </p>
+<p>This will waive the entire fee for every group, as well check one of the reasons. Don't worry if the sliders are still positioned to the left, it does not matter. </p>
 
-<p>If something went wrong, reread the instructions, and if you aren't using Chrome or Safari then get a better browser. </p>
+<p>If something went wrong, reread the instructions. If it still fails, you probably need a better browser, try Safary or Chrome.</p>
 
 <h1>Fund the student groups that matter to you</h1>
 
-<p>Now I recommend that you take a look at the list of groups, and fund the groups that you are interested in. You shouldn't abuse this and keep all the monies for you, remember that some of these groups do have a positive impact on campus and you should at least consider funding each one. </p>
+<p>I recommend that you take a look at each group and make a concious decision as to whether you should give them money or not. You shouldn't abuse this and keep all the monies for yourself. Some groups don't waste their money on stupid events and pizza, and actually need that money to run.</p>
       </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Stanford Refunds-opt-out maintained by <a href="https://github.com/benigeri">benigeri</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/benigeri">benigeri</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -92,7 +87,6 @@ $.each($('[id*="amount"]'), function(index, elem) {
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
 
   </body>
 </html>
