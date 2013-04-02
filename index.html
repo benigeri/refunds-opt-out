@@ -16,7 +16,7 @@
     <div class="wrapper">
       <header>
         <h1>Refunds-opt-out</h1>
-        <p></p>
+        <p>Student Activities Fee Waiver Request Auto Opt Out</p>
 
         <p class="view"><a href="https://github.com/benigeri/refunds-opt-out">View the Project on GitHub <small>benigeri/refunds-opt-out</small></a></p>
 
@@ -28,30 +28,44 @@
         </ul>
       </header>
       <section>
-        <h3>Welcome to GitHub Pages.</h3>
+        <h1>Opt out of your student fees in 3 simple steps!</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>If you're a student at Stanford, then by default you are billed almost 150$ every quarter to fund student groups. After digging in a little, I realized that Stanford gave over 100$ to groups that provided me no value whatsoever. Less than 40$ went to the groups that I was somehow interested in.  </p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<p>Over 12 quarters, this amounts to over $1600, and a lot of students aren't aware of this. And if you do want to opt out, you'll have to head to <a href="http://waivers.stanford.edu">http://waivers.stanford.edu</a> and manually toggle and slide clunky sliders for every single group. I personally think it would make a lot more sense for students to have to opt in rather than opt out. </p>
+
+<p>That's why I wrote a little script that will automatically opt out of each student fee, to turn this into as much of an opt in process as I could. All you have to do is create a new waiver request, and copy and paste some javascript into your browser's URL bar. </p>
+
+<h1>Instructions</h1>
+
+<h3>1. Request a Fee Waiver</h3>
+
+<p>Head over to <a href="http://waivers.stanford.edu">http://waivers.stanford.edu</a> and click on "Request a Fee Waiver for Spring 2012-2013 »"</p>
+
+<h3>2. Run the script!</h3>
+
+<p>First of all copy and paste the following <strong>script</strong>:</p>
+
+<pre><code>$.each($('[name*="value"]'), function(index, elem) {
+  $(elem).attr('checked', true);
+});
+$.each($('[id*="amount"]'), function(index, elem) {
+    elem.value = $(elem).parent().parent().children('th:nth-child(2)').text().substring(1);
+});
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Then clear your browser's URL bar, and type</p>
 
-<h3>Designer Templates</h3>
+<pre><code>javascript:
+</code></pre>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>As soon as you finish typing <code>javascript:</code> paste the script in the URL bar, and press <code>enter</code></p>
 
-<h3>Rather Drive Stick?</h3>
+<p>This will set all of the waivers to their maximum value and pick a reason for you. Don't worry if the sliders are still positioned to the left, it does not matter. </p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>If something went wrong, reread the instructions, and if you aren't using Chrome or Safari then get a better browser. </p>
 
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
+<h3>3. Fund the student groups that matter to you</h3>
 
 <p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
       </section>
@@ -61,15 +75,16 @@ $ git checkout gh-pages
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-28067128-3");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
 
-  ga('create', 'UA-28067128-3', 'github.com');
-  ga('send', 'pageview');
-
-</script>
   </body>
 </html>
