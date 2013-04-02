@@ -1,3 +1,5 @@
+**tl;dr** _If you're a student at Stanford, then by default you are billed almost 50 every quarter to fund student groups. That's why I wrote a little script that will automatically opt out of each student fee. All you have to do is create a new waiver request and copy and paste some javascript into your browser's URL bar._
+
 # Opt out of your Stanford student group fees in 2 simple steps!
 
 If you're a student at Stanford, then by default you are billed almost $150 every quarter to fund student groups. After digging in a little, I realized that Stanford gave over $100 to groups that provided me no value whatsoever. Less than $40 went to the groups that I was at all interested in.  
